@@ -1,0 +1,59 @@
+﻿Exercise 3
+1. select * from vin
+2. SELECT cru FROM if26_tp02.vin order by cru asc
+3. SELECT distinct cru FROM if26_tp02.vin order by cru asc
+4. SELECT * FROM if26_tp02.vin
+   where annee=1980
+   order by degre
+5. SELECT max(degre) FROM if26_tp02.vin;
+6. SELECT distinct cru FROM if26_tp02.vin
+   where degre = (select max(degre) from if26_tp02.vin)
+7.  CREATE 
+		ALGORITHM = UNDEFINED 
+		DEFINER = `root`@`localhost` 
+		SQL SECURITY DEFINER
+	VIEW `if26_tp02`.`view_cru_distinct` AS
+		SELECT DISTINCT
+			`if26_tp02`.`vin`.`cru` AS `cru`,
+			`if26_tp02`.`vin`.`degre` AS `degre`
+		FROM
+			`if26_tp02`.`vin`;
+	SELECT avg(degre) FROM if26_tp02.view_cru_distinct;	
+8. SELECT distinct cru, degre, annee
+	FROM if26_tp02.vin
+	where degre > (select avg(degre) from if26_tp02.vin)
+	order by degre, annee
+9. SELECT region FROM if26_tp02.producteur;
+10. select * from if26_tp02.producteur
+	where prenom="null"
+11. SELECT nom, prenom FROM if26_tp02.producteur
+	where region <> "Corse" and region <> "Beaujolais" and region <> "Bourgogne"
+12. SELECT count(*) FROM if26_tp02.recolte;
+13. SELECT sum(quantite) FROM if26_tp02.recolte
+	where vin_id in (select id from if26_tp02.vin where degre > 12)
+14. SELECT p.nom, p.region, r.quantite, r.vin_id
+	FROM if26_tp02.producteur as p, if26_tp02.recolte as r, if26_tp02.vin as v
+	where r.vin_id=v.id and v.cru="Etoile" and r.producteur_id=p.id
+15. SELECT v.cru, p.id, r.quantite
+	FROM if26_tp02.recolte as r, if26_tp02.vin as v, if26_tp02.producteur as p
+	where v.annee=1979 and v.id=r.vin_id and p.id=r.producteur_id
+	order by p.id
+16. SELECT v.cru, sum(r.quantite) 
+	FROM if26_tp02.vin as v, if26_tp02.recolte as r
+	where v.id=r.vin_id
+	group by v.cru
+	order by v.cru
+17. SELECT p.region, sum(r.quantite) 
+	FROM if26_tp02.producteur p, if26_tp02.recolte r, if26_tp02.vin v
+	where p.id=r.producteur_id and v.id=r.vin_id
+	group by p.region
+	order by sum(r.quantite) desc
+18. 不会
+19. SELECT count(*), p.region
+	FROM if26_tp02.producteur p
+	where region="Savoie" or region="Jura"
+	group by region
+20. SELECT p.nom, p.prenom, v.cru, p.id
+	FROM if26_tp02.producteur p, if26_tp02.recolte r, if26_tp02.vin v
+	where p.id=r.producteur_id and v.id=r.vin_id
+	不会去重
