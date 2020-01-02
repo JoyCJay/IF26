@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>SigleListeActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(128,128,128); font-style: italic; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+SigleListeActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">fr.utt.if26.lemercier_tp05; 
+ 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle; 
+</span><span class="s0">import </span><span class="s1">android.support.v7.app.AppCompatActivity; 
+</span><span class="s0">import </span><span class="s1">android.widget.ListView; 
+ 
+</span><span class="s0">import </span><span class="s1">java.util.Arrays; 
+</span><span class="s0">import </span><span class="s1">java.util.List; 
+ 
+</span><span class="s0">public class </span><span class="s1">SigleListeActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity { 
+ 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_sigle_liste); 
+ 
+        </span><span class="s2">// Méthode simple ....</span><span class="s1"> 
+         List&lt;String&gt; liste = Arrays.asList (</span><span class="s3">&quot;NF16&quot;</span><span class="s1">, </span><span class="s3">&quot;NF20&quot;</span><span class="s1">, </span><span class="s3">&quot;LO02&quot;</span><span class="s1">, </span><span class="s3">&quot;LO07&quot;</span><span class="s1">, </span><span class="s3">&quot;NF19&quot;</span><span class="s1">, </span><span class="s3">&quot;IF26&quot;</span><span class="s1">, </span><span class="s3">&quot;IF10&quot;</span><span class="s1">, </span><span class="s3">&quot;EG23&quot;</span><span class="s1">, </span><span class="s3">&quot;LO12&quot;</span><span class="s1">, </span><span class="s3">&quot;IF02&quot;</span><span class="s1">, </span><span class="s3">&quot;MCS1&quot;</span><span class="s1">); 
+ 
+         </span><span class="s2">// Méthode transverse à toutes les activités (pas bonne solution)</span><span class="s1"> 
+        </span><span class="s2">// List&lt;String&gt; liste =  MonApplication.getListe();</span><span class="s1"> 
+ 
+        AdaptateurSigle adpatateur = </span><span class="s0">new </span><span class="s1">AdaptateurSigle(</span><span class="s0">this</span><span class="s1">, R.layout.sigle, liste); 
+        ListView lv = (ListView) findViewById(R.id.sigle_liste_lv); 
+        lv.setAdapter(adpatateur); 
+ 
+    } 
+ 
+ 
+} 
+</span></pre>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>Module.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,128,0); font-weight: bold; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+Module.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">fr.utt.if26.lemercier_tp05; 
+ 
+</span><span class="s0">import </span><span class="s1">java.io.Serializable; 
+ 
+</span><span class="s0">public class </span><span class="s1">Module </span><span class="s0">implements </span><span class="s1">Serializable { 
+ 
+    </span><span class="s0">private </span><span class="s1">String sigle; 
+    </span><span class="s0">private </span><span class="s1">String parcours; 
+    </span><span class="s0">private </span><span class="s1">String categorie; 
+    </span><span class="s0">private int </span><span class="s1">credit; 
+ 
+    </span><span class="s0">public </span><span class="s1">Module(String sigle, String parcours, String categorie, </span><span class="s0">int </span><span class="s1">credit) { 
+        </span><span class="s0">this</span><span class="s1">.sigle = sigle; 
+        </span><span class="s0">this</span><span class="s1">.setParcours(parcours); 
+        </span><span class="s0">this</span><span class="s1">.categorie = categorie; 
+        </span><span class="s0">this</span><span class="s1">.credit = credit; 
+ 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">String getSigle() { 
+        </span><span class="s0">return </span><span class="s1">sigle; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setSigle(String sigle) { 
+        </span><span class="s0">this</span><span class="s1">.sigle = sigle; 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">String getParcours() { 
+        </span><span class="s0">return </span><span class="s1">parcours; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setParcours(String parcours) { 
+        </span><span class="s0">this</span><span class="s1">.parcours = parcours; 
+    } 
+ 
+ 
+    </span><span class="s0">public </span><span class="s1">String getCategorie() { 
+        </span><span class="s0">return </span><span class="s1">categorie; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setCategorie(String categorie) { 
+        </span><span class="s0">this</span><span class="s1">.categorie = categorie; 
+    } 
+ 
+ 
+    </span><span class="s0">public int </span><span class="s1">getCredit() { 
+        </span><span class="s0">return </span><span class="s1">credit; 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">setCredit(</span><span class="s0">int </span><span class="s1">credit) { 
+        </span><span class="s0">this</span><span class="s1">.credit = credit; 
+    } 
+ 
+ 
+    </span><span class="s0">public void </span><span class="s1">affiche() { 
+        System.out.println(toString()); 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public </span><span class="s1">String toString() { 
+        </span><span class="s0">return </span><span class="s2">&quot;Module{&quot; </span><span class="s1">+ 
+                </span><span class="s2">&quot;sigle='&quot; </span><span class="s1">+ sigle + </span><span class="s2">'</span><span class="s0">\'</span><span class="s2">' </span><span class="s1">+ 
+                </span><span class="s2">&quot;, parcours='&quot; </span><span class="s1">+ parcours + </span><span class="s2">'</span><span class="s0">\'</span><span class="s2">' </span><span class="s1">+ 
+                </span><span class="s2">&quot;, categorie='&quot; </span><span class="s1">+ categorie + </span><span class="s2">'</span><span class="s0">\'</span><span class="s2">' </span><span class="s1">+ 
+                </span><span class="s2">&quot;, credit=&quot; </span><span class="s1">+ credit + 
+                </span><span class="s2">'}'</span><span class="s1">; 
+    } 
+} 
+</span></pre>
+</body>
+</html>

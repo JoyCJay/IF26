@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>MonApplication.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,128,0); font-weight: bold; }
+.s3 { color: rgb(128,128,128); font-style: italic; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MonApplication.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">fr.utt.if26.lemercier_tp05; 
+ 
+</span><span class="s0">import </span><span class="s1">android.app.Application; 
+ 
+</span><span class="s0">import </span><span class="s1">java.util.Arrays; 
+</span><span class="s0">import </span><span class="s1">java.util.List; 
+ 
+</span><span class="s0">public class </span><span class="s1">MonApplication </span><span class="s0">extends </span><span class="s1">Application { 
+ 
+    </span><span class="s0">private static </span><span class="s1">List&lt;String&gt; liste = Arrays.asList (</span><span class="s2">&quot;NF16&quot;</span><span class="s1">, </span><span class="s2">&quot;NF20&quot;</span><span class="s1">, </span><span class="s2">&quot;LO02&quot;</span><span class="s1">, </span><span class="s2">&quot;LO07&quot;</span><span class="s1">, </span><span class="s2">&quot;NF19&quot;</span><span class="s1">, </span><span class="s2">&quot;IF26&quot;</span><span class="s1">, </span><span class="s2">&quot;IF10&quot;</span><span class="s1">, </span><span class="s2">&quot;EG23&quot;</span><span class="s1">, </span><span class="s2">&quot;LO12&quot;</span><span class="s1">, </span><span class="s2">&quot;IF02&quot;</span><span class="s1">, </span><span class="s2">&quot;MCS1&quot;</span><span class="s1">); 
+ 
+    </span><span class="s0">public static </span><span class="s1">List&lt;String&gt; getListe() { 
+        </span><span class="s0">return </span><span class="s1">liste; 
+    } 
+ 
+    </span><span class="s0">public static void </span><span class="s1">listeAjoute (String element) { 
+         liste.add(element); 
+    } 
+ 
+} 
+ 
+ 
+</span><span class="s3">// Cela ne fonctionne pas car les approche sont toute static ....</span></pre>
+</body>
+</html>

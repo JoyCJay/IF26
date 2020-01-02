@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>MainActivity.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,128,0); font-weight: bold; }
+.s3 { color: rgb(0,0,255); }
+.s4 { color: rgb(128,128,128); font-style: italic; }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+MainActivity.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">fr.utt.if26.lemercier_tp05; 
+ 
+</span><span class="s0">import </span><span class="s1">android.content.Intent; 
+</span><span class="s0">import </span><span class="s1">android.os.Bundle; 
+</span><span class="s0">import </span><span class="s1">android.support.v7.app.AppCompatActivity; 
+</span><span class="s0">import </span><span class="s1">android.view.Menu; 
+</span><span class="s0">import </span><span class="s1">android.view.MenuInflater; 
+</span><span class="s0">import </span><span class="s1">android.view.MenuItem; 
+</span><span class="s0">import </span><span class="s1">android.view.View; 
+</span><span class="s0">import </span><span class="s1">android.widget.TextView; 
+</span><span class="s0">import </span><span class="s1">android.widget.Toast; 
+ 
+</span><span class="s0">public class </span><span class="s1">MainActivity </span><span class="s0">extends </span><span class="s1">AppCompatActivity { 
+    Menu menu; 
+ 
+    @Override 
+    </span><span class="s0">protected void </span><span class="s1">onCreate(Bundle savedInstanceState) { 
+        </span><span class="s0">super</span><span class="s1">.onCreate(savedInstanceState); 
+        setContentView(R.layout.activity_main); 
+ 
+        TextView tv = findViewById(R.id.main_tv); 
+        tv.setText(</span><span class="s2">&quot;Application sur les modules du programme ISI&quot;</span><span class="s1">); 
+        tv.setTextSize(</span><span class="s3">30</span><span class="s1">); 
+        tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER); 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public boolean </span><span class="s1">onCreateOptionsMenu(Menu menu) { 
+        </span><span class="s0">super</span><span class="s1">.onCreateOptionsMenu(menu); 
+        MenuInflater inflater = getMenuInflater(); 
+        inflater.inflate(R.menu.main_menu, menu); 
+        </span><span class="s0">this</span><span class="s1">.menu = menu; 
+        </span><span class="s0">return true</span><span class="s1">; 
+    } 
+ 
+    </span><span class="s0">public boolean </span><span class="s1">onOptionsItemSelected(MenuItem item) { 
+        </span><span class="s0">switch </span><span class="s1">(item.getItemId()) { 
+            </span><span class="s0">case </span><span class="s1">R.id.main_menu_sigle_liste: 
+                sigleListe(); 
+                </span><span class="s0">return true</span><span class="s1">; 
+ 
+            </span><span class="s0">case </span><span class="s1">R.id.main_menu_sigle_ajoute: 
+                sigleAjoute(); 
+                </span><span class="s0">return true</span><span class="s1">; 
+ 
+            </span><span class="s0">case </span><span class="s1">R.id.main_menu_sigle_supprime: 
+                sigleSupprime(); 
+                </span><span class="s0">return true</span><span class="s1">; 
+ 
+                </span><span class="s4">// ============================================</span><span class="s1"> 
+ 
+            </span><span class="s0">case </span><span class="s1">R.id.main_menu_module_liste: 
+                moduleListe(); 
+                </span><span class="s0">return true</span><span class="s1">; 
+ 
+            </span><span class="s0">case </span><span class="s1">R.id.main_menu_module_ajoute: 
+                moduleAjoute(); 
+                </span><span class="s0">return true</span><span class="s1">; 
+ 
+            </span><span class="s0">case </span><span class="s1">R.id.main_menu_module_supprime: 
+                moduleSupprime(); 
+                </span><span class="s0">return true</span><span class="s1">; 
+ 
+ 
+            </span><span class="s0">default</span><span class="s1">: 
+                </span><span class="s0">return super</span><span class="s1">.onOptionsItemSelected(item); 
+        } 
+ 
+    } 
+ 
+    </span><span class="s0">private void </span><span class="s1">sigleListe() { 
+        </span><span class="s4">// Toast.makeText(this, &quot;Je veux la liste des sigles&quot;, Toast.LENGTH_LONG).show();</span><span class="s1"> 
+        Intent intent = </span><span class="s0">new </span><span class="s1">Intent (</span><span class="s0">this</span><span class="s1">, SigleListeActivity.</span><span class="s0">class</span><span class="s1">); 
+        startActivity(intent); 
+    } 
+ 
+    </span><span class="s0">private void </span><span class="s1">sigleAjoute() { 
+        </span><span class="s4">// Toast.makeText(this, &quot;Je veux ajouter un sigle&quot;, Toast.LENGTH_LONG).show();</span><span class="s1"> 
+        Intent intent = </span><span class="s0">new </span><span class="s1">Intent (</span><span class="s0">this</span><span class="s1">, SigleAjouteActivity.</span><span class="s0">class</span><span class="s1">); 
+        startActivity(intent); 
+    } 
+ 
+    </span><span class="s0">private void </span><span class="s1">sigleSupprime() { 
+        Toast.makeText(</span><span class="s0">this</span><span class="s1">, </span><span class="s2">&quot;Je veux supprimer un sigle&quot;</span><span class="s1">, Toast.LENGTH_LONG).show(); 
+    } 
+ 
+ 
+    </span><span class="s0">private void </span><span class="s1">moduleListe() { 
+        </span><span class="s4">// Toast.makeText(this, &quot;Je veux la liste des modules&quot;, Toast.LENGTH_LONG).show();</span><span class="s1"> 
+        Intent intent = </span><span class="s0">new </span><span class="s1">Intent (</span><span class="s0">this</span><span class="s1">, ModuleListeActivity.</span><span class="s0">class</span><span class="s1">); 
+        startActivity(intent); 
+ 
+    } 
+ 
+    </span><span class="s0">private void </span><span class="s1">moduleAjoute() { 
+        Toast.makeText(</span><span class="s0">this</span><span class="s1">, </span><span class="s2">&quot;Je veux ajouter un module&quot;</span><span class="s1">, Toast.LENGTH_LONG).show(); 
+    } 
+ 
+    </span><span class="s0">private void </span><span class="s1">moduleSupprime() { 
+        Toast.makeText(</span><span class="s0">this</span><span class="s1">, </span><span class="s2">&quot;Je veux supprimer un module&quot;</span><span class="s1">, Toast.LENGTH_LONG).show(); 
+    } 
+ 
+ 
+ 
+}</span></pre>
+</body>
+</html>

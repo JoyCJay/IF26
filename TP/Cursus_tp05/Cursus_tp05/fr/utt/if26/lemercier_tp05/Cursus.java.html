@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>Cursus.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,128,0); font-weight: bold; }
+.s3 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+Cursus.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">fr.utt.if26.lemercier_tp05; 
+ 
+ 
+</span><span class="s0">import </span><span class="s1">java.util.ArrayList; 
+</span><span class="s0">import </span><span class="s1">java.util.Iterator; 
+ 
+ 
+</span><span class="s0">public class </span><span class="s1">Cursus { 
+    </span><span class="s0">private </span><span class="s1">ArrayList&lt;Module&gt; profil; 
+ 
+    </span><span class="s0">public </span><span class="s1">Cursus() { 
+        profil = </span><span class="s0">new </span><span class="s1">ArrayList(); 
+        init(); 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">ajoute(Module m) { 
+        profil.add(m); 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">init() { 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;GL02&quot;</span><span class="s1">, </span><span class="s2">&quot;TCBR&quot;</span><span class="s1">, </span><span class="s2">&quot;CS&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;NF16&quot;</span><span class="s1">, </span><span class="s2">&quot;TCBR&quot;</span><span class="s1">, </span><span class="s2">&quot;CS&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;NF20&quot;</span><span class="s1">, </span><span class="s2">&quot;TCBR&quot;</span><span class="s1">, </span><span class="s2">&quot;CS&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF09&quot;</span><span class="s1">, </span><span class="s2">&quot;TCBR&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF14&quot;</span><span class="s1">, </span><span class="s2">&quot;TCBR&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;LO02&quot;</span><span class="s1">, </span><span class="s2">&quot;TCBR&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;NF21&quot;</span><span class="s1">, </span><span class="s2">&quot;TCBR&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+ 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF02&quot;</span><span class="s1">, </span><span class="s2">&quot;TCBR&quot;</span><span class="s1">, </span><span class="s2">&quot;CS&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;LO12&quot;</span><span class="s1">, </span><span class="s2">&quot;TCBR&quot;</span><span class="s1">, </span><span class="s2">&quot;CS&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF08&quot;</span><span class="s1">, </span><span class="s2">&quot;TCBR&quot;</span><span class="s1">, </span><span class="s2">&quot;CS&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;EG23&quot;</span><span class="s1">, </span><span class="s2">&quot;TCBR&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF03&quot;</span><span class="s1">, </span><span class="s2">&quot;TCBR&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;LO07&quot;</span><span class="s1">, </span><span class="s2">&quot;TCBR&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;NF19&quot;</span><span class="s1">, </span><span class="s2">&quot;TCBR&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+ 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF05&quot;</span><span class="s1">, </span><span class="s2">&quot;MPL&quot;</span><span class="s1">, </span><span class="s2">&quot;CS&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF19&quot;</span><span class="s1">, </span><span class="s2">&quot;MSI&quot;</span><span class="s1">, </span><span class="s2">&quot;CS&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF11&quot;</span><span class="s1">, </span><span class="s2">&quot;MPL&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF22&quot;</span><span class="s1">, </span><span class="s2">&quot;MSI&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF24&quot;</span><span class="s1">, </span><span class="s2">&quot;MSI&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;LO10&quot;</span><span class="s1">, </span><span class="s2">&quot;MPL&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+ 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF10&quot;</span><span class="s1">, </span><span class="s2">&quot;MPL&quot;</span><span class="s1">, </span><span class="s2">&quot;CS&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF15&quot;</span><span class="s1">, </span><span class="s2">&quot;MSI&quot;</span><span class="s1">, </span><span class="s2">&quot;CS&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF16&quot;</span><span class="s1">, </span><span class="s2">&quot;MSI&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF17&quot;</span><span class="s1">, </span><span class="s2">&quot;MPL&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF20&quot;</span><span class="s1">, </span><span class="s2">&quot;MSI&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;IF26&quot;</span><span class="s1">, </span><span class="s2">&quot;MPL&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">6</span><span class="s1">)); 
+ 
+ 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;MCS1&quot;</span><span class="s1">, </span><span class="s2">&quot;MCS&quot;</span><span class="s1">, </span><span class="s2">&quot;CS&quot;</span><span class="s1">, </span><span class="s3">3</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;MCS2&quot;</span><span class="s1">, </span><span class="s2">&quot;MCS&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">3</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;MCS3&quot;</span><span class="s1">, </span><span class="s2">&quot;MCS&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">3</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;MCS4&quot;</span><span class="s1">, </span><span class="s2">&quot;MCS&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">3</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;MCS5&quot;</span><span class="s1">, </span><span class="s2">&quot;MCS&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">3</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;MCS6&quot;</span><span class="s1">, </span><span class="s2">&quot;MCS&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">3</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;MCS7&quot;</span><span class="s1">, </span><span class="s2">&quot;MCS&quot;</span><span class="s1">, </span><span class="s2">&quot;TM&quot;</span><span class="s1">, </span><span class="s3">3</span><span class="s1">)); 
+        ajoute(</span><span class="s0">new </span><span class="s1">Module(</span><span class="s2">&quot;MCS8&quot;</span><span class="s1">, </span><span class="s2">&quot;MCS&quot;</span><span class="s1">, </span><span class="s2">&quot;CS&quot;</span><span class="s1">, </span><span class="s3">3</span><span class="s1">)); 
+    } 
+ 
+    </span><span class="s0">public </span><span class="s1">ArrayList&lt;String&gt; getSigles() { 
+        ArrayList res = </span><span class="s0">new </span><span class="s1">ArrayList(); 
+        Iterator iterateur = profil.iterator(); 
+        </span><span class="s0">while </span><span class="s1">(iterateur.hasNext()) { 
+            Module m = (Module) (iterateur.next()); 
+            res.add(m.getSigle()); 
+        } 
+        </span><span class="s0">return </span><span class="s1">res; 
+    } 
+ 
+ 
+    </span><span class="s0">public </span><span class="s1">ArrayList&lt;Module&gt; getModules() { 
+        System.out.println(profil.toString()); 
+        </span><span class="s0">return </span><span class="s1">profil; 
+    } 
+} 
+</span></pre>
+</body>
+</html>

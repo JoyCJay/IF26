@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>AdaptateurModule.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+AdaptateurModule.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">fr.utt.if26.lemercier_tp05; 
+ 
+</span><span class="s0">import </span><span class="s1">android.app.Activity; 
+</span><span class="s0">import </span><span class="s1">android.content.Context; 
+</span><span class="s0">import </span><span class="s1">android.view.LayoutInflater; 
+</span><span class="s0">import </span><span class="s1">android.view.View; 
+</span><span class="s0">import </span><span class="s1">android.view.ViewGroup; 
+</span><span class="s0">import </span><span class="s1">android.widget.ArrayAdapter; 
+</span><span class="s0">import </span><span class="s1">android.widget.TextView; 
+ 
+</span><span class="s0">import </span><span class="s1">java.util.ArrayList; 
+ 
+</span><span class="s0">class </span><span class="s1">AdaptateurModule </span><span class="s0">extends </span><span class="s1">ArrayAdapter&lt;Module&gt; { 
+ 
+    ArrayList&lt;Module&gt; modules; 
+    Context contexte; 
+    </span><span class="s0">int </span><span class="s1">ressource; 
+ 
+    </span><span class="s0">public </span><span class="s1">AdaptateurModule(Context context, </span><span class="s0">int </span><span class="s1">resource, ArrayList&lt;Module&gt; data) { 
+        </span><span class="s0">super</span><span class="s1">(context, resource, data); 
+        </span><span class="s0">this</span><span class="s1">.modules = data; 
+        </span><span class="s0">this</span><span class="s1">.contexte = context; 
+        </span><span class="s0">this</span><span class="s1">.ressource = resource; 
+    } 
+ 
+    @Override 
+    </span><span class="s0">public </span><span class="s1">View getView(</span><span class="s0">int </span><span class="s1">position, View convertView, ViewGroup parent) { 
+        LayoutInflater inflater = ((Activity) contexte).getLayoutInflater(); 
+        View v = inflater.inflate(ressource, parent, </span><span class="s0">false</span><span class="s1">); 
+ 
+        Module module = modules.get(position); 
+ 
+        TextView tv_sigle = (TextView) v.findViewById(R.id.module_tv_sigle); 
+        tv_sigle.setText(module.getSigle()); 
+ 
+        TextView tv_categorie = (TextView) v.findViewById(R.id.module_tv_categorie); 
+        tv_categorie.setText(module.getCategorie()); 
+ 
+        TextView tv_parcours = (TextView) v.findViewById(R.id.module_tv_parcours); 
+        tv_parcours.setText(module.getParcours()); 
+ 
+        TextView tv_credit = (TextView) v.findViewById(R.id.module_tv_credit); 
+        tv_credit.setText(Integer.toString(module.getCredit())); 
+ 
+        </span><span class="s0">return </span><span class="s1">v; 
+ 
+    } 
+} 
+</span></pre>
+</body>
+</html>

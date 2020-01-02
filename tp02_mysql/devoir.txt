@@ -1,6 +1,0 @@
-soit une analyse critique:
-1. NetBeans ce IDE n'est pas ¨¤ l'aise pour moi. £¨pr¨¦f¨¨re VSCode ou IntelliJ£©
-2. Clavier de mac en fran?ais n'est pas gentil.
-
-soit une question suppl¨¦mentaire ¨¤ l¡¯un des exercices dece TD/TP.
-1. manque la notion de l'interface en java. Design pattern de IOP
